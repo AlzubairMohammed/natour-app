@@ -1,0 +1,33 @@
+
+body{
+    /* background: #513AFF !important; */
+}
+.header h3 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.header p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+.checkbox {
+    margin-bottom: 25px !important;
+}
+
+.passwordInput{
+    position: relative !important;
+}
+.eye{
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 10px);
+}
+
+.btncustom {
+    background-color: #513AFF !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: #fff !important;
+    padding: 12px 0 !important;
+}
