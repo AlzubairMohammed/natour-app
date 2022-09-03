@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between">
                 <h2 class="card-title m-0">Rent Details</h2>
-                <a href="{{ url()->previous() }}" class="btn btn-light">Back</a>
+                <a href="{{ route('rent') }}" class="btn btn-light">Back</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
