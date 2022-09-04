@@ -30,7 +30,7 @@ class RentRepository extends Repository
        $rent = $this->model()::query();
        
        if (request()->short_by) {
-        $rent = $rent->latest();
+        $rent = $rent->latest('id');
        }
 
        if (request()->city) {
