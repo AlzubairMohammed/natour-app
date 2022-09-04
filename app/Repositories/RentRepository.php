@@ -85,23 +85,28 @@ class RentRepository extends Repository
         }
        }
 
+       $month = request()->month;
+       if ($month) {
+        $rent = $rent->whereHas('RentInfo', function ($rentinfo) use ($month) {
+            $rentinfo->where('month', $month)->latest('id');
+        });
+       }
+
        $min = request()->min;
        $max = request()->max;
-       if ($min) {
-        $rent = $rent->whereHas('Cost', function ($cost) use ($min,$max) {
+       if ($min && $max=='') {
+        $rent = $rent->whereHas('Cost', function ($cost) use ($min) {
             $cost->where('rent_price', '>=', $min);
+        });
+       }
+       elseif ($max && $min=='') {
+        $rent = $rent->whereHas('Cost', function ($cost) use ($max) {
+            $cost->where('rent_price', '<=', $max);
         });
        }
        elseif ($min && $max) {
         $rent = $rent->whereHas('Cost', function ($cost) use ($min,$max) {
-            $cost->whereBetween('rent_price', [$min,$max]);
-        });
-       }
-
-       $month = request()->month;
-       if ($month) {
-        $rent = $rent->whereHas('RentInfo', function ($rentinfo) use ($month) {
-            $rentinfo->where('month', $month)->latest();
+            $cost->whereBetween('rent_price', [$min, $max]);
         });
        }
 
