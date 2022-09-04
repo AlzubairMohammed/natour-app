@@ -23,6 +23,6 @@ class CurrencyController extends Controller
         
         (new CurrencyRepository())->updateOrCreateByRequest($request);
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Currency updated');
     }
 }

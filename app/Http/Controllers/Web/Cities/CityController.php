@@ -19,12 +19,12 @@ class CityController extends Controller
     public function store(CityRequest $request)
     {
         (new CityRepository())->storeByRequest($request);
-        return redirect()->route('city');
+        return redirect()->route('city')->with('success','City added successfully');
     }
 
     public function edit(CityRequest $request,City $city)
     {
         (new CityRepository())->updateByRequest($request,$city);
-        return redirect()->route('city')->with('success','city update successfully');
+        return redirect()->route('city')->with('success','City update successfully');
     }
 }

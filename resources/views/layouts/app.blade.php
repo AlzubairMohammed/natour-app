@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="{{ asset('web/css/all.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('web/css/bootstrap.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('web/css/toastr.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('web/css/datatables.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('web/css/custom.css') }}" type="text/css">
@@ -42,6 +43,7 @@
     <script src="{{ asset('web/js/argon.js') }}"></script>
     <script src="{{ asset('web/js/datatables.min.js') }}"></script>
     <script src="{{ asset('web/js/countfect.min.js') }}"></script>
+    <script src="{{ asset('web/js/toastr.min.js') }}"></script>
     <script src="{{ asset('web/js/main.js') }}"></script>
 
     <script>
@@ -57,6 +59,18 @@
         } );
 
     </script>
+
+    @if(session()->has('success'))
+        <script>
+            toastr.success("{{ session()->get('success') }}")
+        </script>
+    @endif
+
+    @if(session()->has('error'))
+        <script>
+            toastr.error();("{{ session()->get('error') }}")
+        </script>
+    @endif
 
     @stack('scripts')
 </body>

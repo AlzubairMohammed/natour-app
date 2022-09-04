@@ -21,12 +21,12 @@ class AreaController extends Controller
     public function store(AreaAdminRequest $request)
     {
         (new AreaRepository())->storeByRequest($request);
-        return redirect()->back();
+        return redirect()->back()->with('success','Area added successfully');
     }
 
     public function update(AreaAdminRequest $request, Area $area)
     {
         (new AreaRepository())->updateByRequest($request,$area);
-        return redirect()->back();
+        return redirect()->back()->with('success','Area updated successfully');
     }
 }

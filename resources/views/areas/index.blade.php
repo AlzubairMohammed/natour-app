@@ -3,13 +3,17 @@
 @section('content')
 
 <div class="container-fluid mt-4">
+
+    @if($errors->any())
+    {!! implode('', $errors->all('<div class="text-danger">:message</div>')) !!}
+@endif
     <div class="card">
         <div class="card-header d-flex justify-content-between">
             <h2 class="card-title m-0">All Area List</h2>
             <button class="btn btn-success" data-toggle="modal" data-target="#addNewArea"><i class="fa fa-plus"></i> Add New Area</button>
         </div>
 
-        
+
         <!--Add Area Modal -->
         <div class="modal fade" id="addNewArea">
             <div class="modal-dialog modal-md modal-dialog-centered">

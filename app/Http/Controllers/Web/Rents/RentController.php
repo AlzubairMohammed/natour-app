@@ -26,6 +26,6 @@ class RentController extends Controller
     {
         (new RentRepository())->updateStatusById($rent);
 
-        return back()->with('success','rent status updated');
+        return back()->with('success','Rent status updated successfully');
     }
 }

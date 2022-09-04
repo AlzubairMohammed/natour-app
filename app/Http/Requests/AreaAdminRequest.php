@@ -25,7 +25,7 @@ class AreaAdminRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'city_id' => 'required|exists:areas,city_id'
+            'city_id' => 'required|exists:cities,id'
         ];
     }
 }
