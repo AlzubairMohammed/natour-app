@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Fav icon -->
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('web/logos/logo.svg') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('web/logos/favicon.png') }}">
   <!-- custome css -->
   <link rel="stylesheet" href="{{ asset('web/css/login.css') }}">
   <!-- Bootstrap CSS -->
