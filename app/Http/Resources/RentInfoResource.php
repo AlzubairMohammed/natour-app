@@ -19,7 +19,7 @@ class RentInfoResource extends JsonResource
             'available_from' => Carbon::parse($this->available_from)->format('d M Y'),
             'month' => $this->month,
             'city' => (new CityResource($this->city)),
-            'area' => $this->area->name,
+            'area' => ['id' => $this->area->id, 'name' => $this->area->name],
             'address' => $this->address,
         ];
     }
