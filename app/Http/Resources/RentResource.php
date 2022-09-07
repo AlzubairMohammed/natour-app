@@ -14,8 +14,7 @@ class RentResource extends JsonResource
      */
     public function toArray($request)
     {
-        $for_rent = $this->forRent;
-        
+        $for_rent = $this->forRent; 
         return [
             'id' => $this->id,
             'user' => (new UserResource($this->customer->user)),
@@ -33,7 +32,6 @@ class RentResource extends JsonResource
             'charges' => (new CostResource($this->cost)),
             'religion' => (new ReligionResource($this->religion)),
             'for_rent' => (new ForRentResource($for_rent)),
-            'favorite' => ''
         ];
     }
 }
