@@ -18,7 +18,7 @@ class RentInfoRepository extends Repository
     $rent_info = $this->model()::updateOrCreate([
       'rent_id' => $rent->id,
       'available_from' => $request->available_from,
-      'month' => Carbon::parse($request->available_from)->format('J'),
+      'month' => Carbon::parse($request->available_from)->format('F'),
       'city_id' => $request->city,
       'area_id' => $request->area,
       'address' => $request->address
