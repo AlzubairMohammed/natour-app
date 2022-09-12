@@ -4,7 +4,7 @@
     <div class="container-fluid mt-4">
         <div class="card">
             <div class="card-header d-flex justify-content-between">
-                <h2 class="card-title m-0">All Messages</h2>
+                <h2 class="card-title m-0">All Social Link</h2>
                 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addsocialModal">Add Social Link</button>
             </div>
             
