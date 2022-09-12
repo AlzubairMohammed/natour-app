@@ -39,7 +39,6 @@
 
     <script src="{{ asset('web/js/jquery.min.js') }}"></script>
     <script src="{{ asset('web/js/bootstrap.min.js') }}"></script>
-
     <script src="{{ asset('web/js/argon.js') }}"></script>
     <script src="{{ asset('web/js/datatables.min.js') }}"></script>
     <script src="{{ asset('web/js/countfect.min.js') }}"></script>

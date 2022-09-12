@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\Customers\CustomerController;
 use App\Http\Controllers\Web\Dashboard\DashboardController;
 use App\Http\Controllers\Web\Messages\MessageController;
 use App\Http\Controllers\Web\Rents\RentController;
+use App\Http\Controllers\Web\Social\SocialLinkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,5 +55,11 @@ Route::post('/areas/{area}/edit',[AreaController::class, 'update'])->name('area.
 //currency
 Route::get('/setting/currenct',[CurrencyController::class, 'index'])->name('setting.currency');
 Route::post('/setting/currenct',[CurrencyController::class, 'updateOrCreate'])->name('setting.currency');
+
+//social Link
+Route::get('/social-link',[SocialLinkController::class, 'index'])->name('setting.socialLink');
+Route::post('/social-link',[SocialLinkController::class, 'store'])->name('setting.socialLink.store');
+Route::post('/social-link/{social}',[SocialLinkController::class, 'update'])->name('setting.socialLink.update');
+Route::get('/social-link/{social}',[SocialLinkController::class, 'delete'])->name('setting.socialLink.delete');
 
 });

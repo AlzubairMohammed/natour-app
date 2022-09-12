@@ -65,6 +65,9 @@
                             <a class="nav-link" href="{{ route('setting.currency') }}">
                                 <span class="nav-link-text">{{ __('Currency') }}</span>
                             </a>
+                            <a class="nav-link" href="{{ route('setting.socialLink') }}">
+                                <span class="nav-link-text">{{ __('Social Link') }}</span>
+                            </a>
                         </ul>
                     </div>
                 </li>

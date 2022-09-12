@@ -8,6 +8,7 @@ use App\Http\Controllers\API\Currency\CurrencyController;
 use App\Http\Controllers\API\Favorite\FavoriteController;
 use App\Http\Controllers\API\Message\MessageController;
 use App\Http\Controllers\API\Rent\RentController;
+use App\Http\Controllers\API\Social\SocialLinkController;
 use App\Http\Controllers\API\User\UserController;
 
 /*
@@ -40,6 +41,8 @@ Route::post('/message',[MessageController::class, 'store']);
 Route::get('/currency',[CurrencyController::class ,'index']);
 
 Route::get('rent-type', [RentController::class, 'rentType']);
+
+Route::get('social-link', [SocialLinkController::class, 'index']);
 
 
 Route::middleware('auth:api')->group(function(){
