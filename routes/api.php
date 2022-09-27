@@ -10,6 +10,7 @@ use App\Http\Controllers\API\Message\MessageController;
 use App\Http\Controllers\API\Rent\RentController;
 use App\Http\Controllers\API\Social\SocialLinkController;
 use App\Http\Controllers\API\User\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,14 @@ Route::post('/contact-verify',[AuthController::class, 'mobileVerify']);
 Route::post('/forgot-password',[ForgotPasswordController::class, 'forgotPassword']);
 Route::post('/forgot-password/otp/verify',[ForgotPasswordController::class, 'verifyOtp']);
 Route::post('/reset-password',[ForgotPasswordController::class, 'resetPassword']);
+
+// Route::get('/rents', function() {
+//     if(Auth::guard('api')->check()) {
+//        return [RentController::class, 'index'];
+//     } else {
+//         dd('Hello not logged-in');
+//     }
+// });
 
 Route::get('/rents',[RentController::class, 'index']);
 Route::get('/rents/{id}',[RentController::class, 'show']);

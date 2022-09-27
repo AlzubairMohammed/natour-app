@@ -7,15 +7,22 @@ use App\Http\Requests\RentRequest;
 use App\Http\Resources\RentResource;
 use App\Models\Rent;
 use App\Repositories\RentRepository;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class RentController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
+        
+        // if(Auth::guard('api')->check()) {
+        //     $user= Auth::guard('api')->user();
+        //  }
         $rents = (new RentRepository())->getAll();
+        
         return $this->json('Rent list', [
             'rents' => RentResource::collection($rents)
         ]);

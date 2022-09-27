@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Auth;
 
 class RentResource extends JsonResource
 {
@@ -14,7 +15,17 @@ class RentResource extends JsonResource
      */
     public function toArray($request)
     {
-        $for_rent = $this->forRent; 
+        $user = Auth::guard('api')->user();
+        $favorite = 0;
+        if ($user) {
+            $favoriteList = $user->customer->favorites;
+            foreach ($favoriteList as $fav) {
+                if ($fav->rent_id == $this->id) {
+                    $favorite = 1;
+                }
+            }
+        }
+        $for_rent = $this->forRent;
         return [
             'id' => $this->id,
             'user' => (new UserResource($this->customer->user)),
@@ -32,6 +43,7 @@ class RentResource extends JsonResource
             'charges' => (new CostResource($this->cost)),
             'religion' => (new ReligionResource($this->religion)),
             'for_rent' => (new ForRentResource($for_rent)),
+            'favorite' => $favorite
         ];
     }
 }
