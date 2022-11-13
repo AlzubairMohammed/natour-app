@@ -79,9 +79,9 @@ class RentRepository extends Repository
        $washroom = request()->washroom;
        if ($washroom) {
         if ($washroom == 5) {
-            $rent = $rent->where('washroom', '>=', $badroom);
+            $rent = $rent->where('washroom', '>=', $washroom);
         }else{
-            $rent = $rent->where('washroom', $badroom);
+            $rent = $rent->where('washroom', $washroom);
         }
        }
 
@@ -110,6 +110,14 @@ class RentRepository extends Repository
         });
        }
 
+        $heighToLow = request()->heigh_to_low;
+        if ($heighToLow == 1) {
+            $rent->orderBy('price','desc');
+        }
+        if ($heighToLow == 0) {
+            $rent->orderBy('price','asc');
+        }
+       
        return $rent->isActive()->get();
    }
 
@@ -130,6 +138,7 @@ class RentRepository extends Repository
            'balcony' => $request->balcony,
            'position' => $request->position,
            'bad' => $request->bad,
+           'price' => $request->rent_price,
            'is_active' => 1,
        ]);
 
@@ -154,7 +163,8 @@ class RentRepository extends Repository
             'washroom' => $request->washroom,
             'balcony' => $request->balcony,
             'position' => $request->position,
-            'bad' => $request->bad
+            'bad' => $request->bad,
+            'price' => $request->rent_price,
         ]);
 
         (new CostRepository())->updateByRequest($request,$rent);

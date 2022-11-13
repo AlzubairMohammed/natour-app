@@ -57,11 +57,11 @@ Route::get('social-link', [SocialLinkController::class, 'index']);
 Route::middleware('auth:api')->group(function(){
 
     Route::get('/favorites',[FavoriteController::class, 'index']);
-    Route::post('/favorites',[FavoriteController::class, 'store']);
-    Route::delete('/favorites/{favorite}',[FavoriteController::class, 'destroy']);
+    Route::get('/favorites/{rent}',[FavoriteController::class, 'favoriteToggle']);
 
     Route::post('/post',[RentController::class, 'store']);
     Route::post('/post/{rent}',[RentController::class, 'update']);
+    Route::get('/post/{rent}/toggle-status',[RentController::class,'toggleStatus']);
     
     Route::get('/my-posts',[RentController::class, 'myPosts']);
     Route::delete('/my-posts/{rent}',[RentController::class, 'destroy']);

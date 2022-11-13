@@ -18,12 +18,12 @@ class FavoriteRepository extends Repository
        return $customer->favorites()->latest()->get();
    }
 
-   public function storeByRequest(FavoriteRequest $request): Favorite
+   public function storeByRequest($id): Favorite
    {
        $customer = auth()->user()->customer;
        $favorite = $this->model()::create([
            'customer_id' => $customer->id,
-           'rent_id' => $request->rent_id
+           'rent_id' => $id
        ]);
        return $favorite;
    }

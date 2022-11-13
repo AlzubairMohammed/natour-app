@@ -55,7 +55,7 @@ class RentController extends Controller
     public function myPosts()
     {
         $customer = auth()->user()->customer;
-        $posts = $customer->rents()->isActive()->latest()->get();
+        $posts = $customer->rents()->latest()->get();
         return $this->json('My posts', [
             'posts' => RentResource::collection($posts)
         ]);
@@ -66,6 +66,14 @@ class RentController extends Controller
         $type = config('enums.rent_types');
         return $this->json('Rent Type', [
             'type' => $type
+        ]);
+    }
+
+    public function toggleStatus(Rent $rent)
+    {
+        $rent = (new RentRepository())->updateStatusById($rent);
+        return $this->json('active status change successfully', [
+            'rent' => (new RentResource($rent))
         ]);
     }
 
