@@ -25,7 +25,7 @@
             <div class="card-body form-size">
               <form role="form" class="pui-form" id="loginform"  method="POST" action="{{ route('login') }}"> @csrf
                 <div class="header text-center">
-                  <img src="{{ asset('web/logos/logo.svg') }}" width="190">
+                  <img src="{{ asset('web/logos/logo.png') }}" width="190">
                   <h3 class="mt-3">Admin Login</h3>
                   <p>This is a secure system and you will need to provide tour login detalis to access the site</p>
                 </div>
