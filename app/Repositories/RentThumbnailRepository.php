@@ -35,7 +35,7 @@ class RentThumbnailRepository extends Repository
       return $thumbnail;
    }
 
-   public function updateByRequest($request, $rent)
+   public function  updateByRequest($request, $rent)
    {
       $thumbnail = null;
       if (!empty($request->feature_image)) {
@@ -62,3 +62,5 @@ class RentThumbnailRepository extends Repository
       return $thumbnail;
    }
 }
+
+
