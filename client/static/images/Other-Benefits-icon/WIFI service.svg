@@ -1,0 +1,32 @@
+<svg id="WIFI_service" data-name="WIFI service" xmlns="http://www.w3.org/2000/svg" width="33.224" height="27.046" viewBox="0 0 33.224 27.046">
+  <g id="Group_9508" data-name="Group 9508">
+    <g id="Group_9502" data-name="Group 9502" transform="translate(0.834)">
+      <g id="Group_9501" data-name="Group 9501">
+        <path id="Path_2275" data-name="Path 2275" d="M75.067,94.491A1.562,1.562,0,0,0,73.9,96.3l3.64,18.791,4.748-1.155L76.934,95.565A1.562,1.562,0,0,0,75.067,94.491Z" transform="translate(-73.874 -94.447)" fill="#96928f"/>
+        <g id="Group_9500" data-name="Group 9500" transform="translate(23.14)">
+          <path id="Path_2276" data-name="Path 2276" d="M348.208,94.491a1.562,1.562,0,0,1,1.165,1.811l-3.64,18.791-4.748-1.155,5.356-18.373A1.562,1.562,0,0,1,348.208,94.491Z" transform="translate(-340.985 -94.447)" fill="#726e6b"/>
+        </g>
+      </g>
+    </g>
+    <path id="Path_2277" data-name="Path 2277" d="M95.354,301.682H66.364a2.123,2.123,0,0,1-2.117-2.117v-5.721a2.123,2.123,0,0,1,2.117-2.117H95.354a2.123,2.123,0,0,1,2.117,2.117v5.721A2.123,2.123,0,0,1,95.354,301.682Z" transform="translate(-64.247 -274.636)" fill="#655665"/>
+    <path id="Path_2278" data-name="Path 2278" d="M272.612,293.846v5.721a2.123,2.123,0,0,1-2.116,2.117H256V291.73h14.5A2.122,2.122,0,0,1,272.612,293.846Z" transform="translate(-239.388 -274.639)" fill="#493e49"/>
+    <circle id="Ellipse_50" data-name="Ellipse 50" cx="1.748" cy="1.748" r="1.748" transform="translate(5.03 20.32)" fill="#f4f2ef"/>
+    <g id="Group_9503" data-name="Group 9503" transform="translate(16.612 20.769)">
+      <path id="Path_2279" data-name="Path 2279" d="M256,334.18h2.706v2.6H256Z" transform="translate(-256 -334.18)" fill="#f4a300"/>
+      <path id="Path_2280" data-name="Path 2280" d="M317.24,334.18h2.816v2.6H317.24Z" transform="translate(-311.935 -334.18)" fill="#f4a300"/>
+      <path id="Path_2281" data-name="Path 2281" d="M379.75,334.18h2.706v2.6H379.75Z" transform="translate(-369.029 -334.18)" fill="#f4a300"/>
+    </g>
+    <g id="Group_9504" data-name="Group 9504" transform="translate(12.06 7.962)">
+      <path id="Path_2282" data-name="Path 2282" d="M210.79,190.047a4.088,4.088,0,0,0-5.565,0l-1.77-1.9a6.687,6.687,0,0,1,9.1,0Z" transform="translate(-203.456 -186.355)" fill="#f4f2ef"/>
+    </g>
+    <g id="Group_9505" data-name="Group 9505" transform="translate(16.612 7.963)">
+      <path id="Path_2283" data-name="Path 2283" d="M260.552,188.148l-1.769,1.9A4.076,4.076,0,0,0,256,188.959v-2.6A6.665,6.665,0,0,1,260.552,188.148Z" transform="translate(-256 -186.36)" fill="#e5e1dc"/>
+    </g>
+    <g id="Group_9506" data-name="Group 9506" transform="translate(8.259 2.377)">
+      <path id="Path_2284" data-name="Path 2284" d="M174.513,127.07a9.673,9.673,0,0,0-13.168,0l-1.77-1.9a12.272,12.272,0,0,1,16.707,0Z" transform="translate(-159.576 -121.885)" fill="#f4f2ef"/>
+    </g>
+    <g id="Group_9507" data-name="Group 9507" transform="translate(16.612 2.377)">
+      <path id="Path_2285" data-name="Path 2285" d="M264.353,125.172l-1.769,1.9A9.64,9.64,0,0,0,256,124.489v-2.6A12.23,12.23,0,0,1,264.353,125.172Z" transform="translate(-256 -121.89)" fill="#e5e1dc"/>
+    </g>
+  </g>
+</svg>

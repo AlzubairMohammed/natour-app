@@ -1,0 +1,106 @@
+@import url("https://use.typekit.net/xev0vzc.css");
+body{
+  font-family: acumin-pro, sans-serif;
+  font-style: normal;
+}
+.form-control.is-invalid{
+  background-image: none !important;
+  border-color: #dc3545 !important;
+}
+.form-select.is-invalid{
+  border-color: #dc3545 !important;
+}
+.btn-primary{
+  background-color: #3B54FF !important;
+}
+
+.bg-color{
+  background-color: #e7e7e7;
+}
+.bg-color:focus{
+  background-color: #F7F9FA !important;
+}
+.text-green{
+  color: #3B54FF;
+}
+.text-gray{
+  color: #808080 !important;
+}
+.font-24{
+  font-size: 24px;
+}
+.font-22{
+  font-size: 22px;
+}
+.font-20{
+  font-size: 20px;
+}
+.font-18{
+  font-size: 18px;
+}
+.font-14{
+  font-size: 14px;
+}
+.bold{
+  font-weight: 600;
+}
+p{
+  margin: 0;
+}
+.title{
+  font-size: 36px;
+  color: #000;
+  font-weight: bold;
+}
+.pb-60{
+  padding-bottom: 60px;
+}
+.pb-65{
+  padding-bottom: 65px;
+}
+.pb-70{
+  padding-bottom: 70px;
+}
+.short-desc {
+  color: #808080;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: normal;
+  margin-top: 8px;
+}
+.slick-prev:before, .slick-next:before {
+  opacity: 0.75;
+  color: #6c757d !important;
+}
+
+.bg-custom,.bg-custom:hover{
+  color: #fff;
+  background: linear-gradient(98deg, #3B99FE 0%, #3b54ff 100%) 0% 0%;
+}
+
+.nav-tabs .nav-link{
+  color: #808080 !important;
+}
+
+.nav-tabs .nav-link.active{
+  color: #3B54FF !important;
+}
+
+
+@media screen and (max-width: 572px){
+  .slick-prev,.slick-next{
+    width: 30px !important;
+    height: 30px !important;
+    opacity: 1;
+    background-color: #F7F9FA !important;
+    z-index: 99 !important;
+    border-radius: 50% !important;
+  }
+  .slick-prev{
+    left: -8px !important;
+  }
+  .slick-next{
+    right: -8px !important;
+  }
+}
+
