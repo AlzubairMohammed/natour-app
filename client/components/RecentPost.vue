@@ -12,7 +12,7 @@
             <nuxt-link :to="'/service/'+ recentpost.id">
             <div class="card border-0">
               <div class="card-top">
-              <img :src="recentpost.thumbnails != '' ? recentpost.thumbnails[0].src : ''" width="100%" />
+              <img :src="recentpost.thumbnails != '' ? 'http://admin.natour.ae' + recentpost.thumbnails[0].src : ''" width="100%" />
               <div class="overItem">
                 <i class="fa-solid fa-image font-16"></i>
                 <span class="font-18"> {{recentpost.thumbnails.length > 1 ? recentpost.thumbnails.length - 1 : '0'}}</span>
