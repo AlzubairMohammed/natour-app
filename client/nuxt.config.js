@@ -77,6 +77,7 @@ export default {
       // "service-id",
       "/my-ads/:id?",
       "/service",
+      "/service/:title/:history?/:id?",
       "/recover-otp-verify",
       "/profile",
       "/password-reset",
