@@ -7,17 +7,32 @@
             <div class="col-md-4">
               <select v-model="city" class="form-select search py-2">
                 <option value="">Select your City</option>
-                <option v-for="city in cityList" :key="city.id" :value="city.id">{{city.name}}</option>
+                <option
+                  v-for="city in cityList"
+                  :key="city.id"
+                  :value="city.id"
+                >
+                  {{ city.name }}
+                </option>
               </select>
             </div>
             <div class="col-md-4">
               <select v-model="type" class="form-select search py-2">
                 <option value="">Rent Type</option>
-                <option v-for="rentType in rentTypeList" :key="rentType" :value="rentType">{{rentType}}</option>
+                <option
+                  v-for="rentType in rentTypeList"
+                  :key="rentType"
+                  :value="rentType"
+                >
+                  {{ rentType }}
+                </option>
               </select>
             </div>
             <div class="col-md-4 text-md-center">
-              <button class="btn btn-primary py-2 w-100" @click="searchCityType">
+              <button
+                class="btn btn-primary py-2 w-100"
+                @click="searchCityType"
+              >
                 <i class="fa fa-search"></i> Search
               </button>
             </div>
@@ -39,11 +54,23 @@
               <div class="tenant-section">
                 <p class="font-20 my-1 bold">Type of Tenant</p>
                 <p>
-                  <input type="checkbox" value="Family" id="Family" true-value="1" false-value=""/>
+                  <input
+                    type="checkbox"
+                    value="Family"
+                    id="Family"
+                    true-value="1"
+                    false-value=""
+                  />
                   <label for="Family" class="font-16 ms-1">Family</label>
                 </p>
                 <p>
-                  <input type="checkbox" value="Bachelor" id="Bachelor" true-value="1" false-value=""/>
+                  <input
+                    type="checkbox"
+                    value="Bachelor"
+                    id="Bachelor"
+                    true-value="1"
+                    false-value=""
+                  />
                   <label for="Bachelor" class="font-16 ms-1">Bachelor</label>
                 </p>
                 <p>
@@ -51,7 +78,8 @@
                     v-model="filters.male_student"
                     type="checkbox"
                     id="Male_Student"
-                    true-value="1" false-value=""
+                    true-value="1"
+                    false-value=""
                   />
                   <label for="Male_Student" class="font-16 ms-1"
                     >Male Student</label
@@ -63,7 +91,8 @@
                     type="checkbox"
                     value="1"
                     id="Female_Student"
-                    true-value="1" false-value=""
+                    true-value="1"
+                    false-value=""
                   />
                   <label for="Female_Student" class="font-16 ms-1"
                     >Female Student</label
@@ -74,7 +103,8 @@
                     type="checkbox"
                     value="Small Family"
                     id="Small Family"
-                    true-value="1" false-value=""
+                    true-value="1"
+                    false-value=""
                   />
                   <label for="Small Family" class="font-16 ms-1"
                     >Small Family</label
@@ -86,7 +116,8 @@
                     type="checkbox"
                     value="1"
                     id="Female_Job_Holder"
-                    true-value="1" false-value=""
+                    true-value="1"
+                    false-value=""
                   />
                   <label for="Female_Job_Holder" class="font-16 ms-1"
                     >Female Job Holder</label
@@ -98,7 +129,8 @@
                     type="checkbox"
                     value="1"
                     id="Male_Job_Holder"
-                    true-value="1" false-value=""
+                    true-value="1"
+                    false-value=""
                   />
                   <label for="Male_Job_Holder" class="font-16 ms-1"
                     >Male Job Holder</label
@@ -218,7 +250,13 @@
                 <p class="font-20 mt-1 bold">From</p>
                 <select v-model="filters.month" class="form-select py-2">
                   <option value="" selected>Select Month</option>
-                  <option v-for="month in monthList" :key="month" :value="month">{{month}}</option>
+                  <option
+                    v-for="month in monthList"
+                    :key="month"
+                    :value="month"
+                  >
+                    {{ month }}
+                  </option>
                 </select>
               </div>
 
@@ -228,68 +266,114 @@
                 <div class="row">
                   <div class="col-6">
                     <label class="m-0">Min</label>
-                    <input v-model="minAmount" type="number" class="form-control py-2" placeholder="Min Amount">
+                    <input
+                      v-model="minAmount"
+                      type="number"
+                      class="form-control py-2"
+                      placeholder="Min Amount"
+                    />
                   </div>
                   <div class="col-6">
                     <label class="m-0">Max</label>
-                    <input v-model="maxAmount" type="number" class="form-control py-2" placeholder="Max Amount">
+                    <input
+                      v-model="maxAmount"
+                      type="number"
+                      class="form-control py-2"
+                      placeholder="Max Amount"
+                    />
                   </div>
                 </div>
-                <button v-if="minAmount || maxAmount" class="btn btn-primary w-100 mt-2" @click="searchMaxMin"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                <button
+                  v-if="minAmount || maxAmount"
+                  class="btn btn-primary w-100 mt-2"
+                  @click="searchMaxMin"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i> Search
+                </button>
               </div>
             </div>
           </div>
 
           <!-- right side -->
           <div class="col-md-8">
-
             <div class="card card-body rounded-0 border-0">
-
               <div class="services" id="AllRentLists">
-
-                <div class="services-item" v-for="rent in paginateItems" :key="rent.id">
-                  <nuxt-link :to="'/service/'+ rent.id">
+                <div
+                  class="services-item"
+                  v-for="rent in paginateItems"
+                  :key="rent.id"
+                >
+                  <nuxt-link
+                    :to="`/service/${rent.title.replace(
+                      /\s+/g,
+                      '-'
+                    )}/${rent.rent_info.available_from.replace(/\s+/g, '-')}/${
+                      rent.id
+                    }`"
+                  >
                     <div class="row">
                       <div class="col-md-4">
                         <div class="box-image">
-                          <img :src="rent.thumbnails != '' ? rent.thumbnails[0].src : ''" />
+                          <img
+                            :src="
+                              rent.thumbnails != ''
+                                ? rent.thumbnails[0].src
+                                : ''
+                            "
+                          />
                           <div class="overItem">
                             <i class="fa-solid fa-image font-16"></i>
-                            <span class="font-18"> {{rent.thumbnails[0] ? rent.thumbnails.length - 1 : '0'}}</span>
+                            <span class="font-18">
+                              {{
+                                rent.thumbnails[0]
+                                  ? rent.thumbnails.length - 1
+                                  : "0"
+                              }}</span
+                            >
                           </div>
                         </div>
                       </div>
                       <div class="col-md-8 ps-md-2">
                         <div class="like">
                           <p class="text-green m-0 font-18 bold">
-                            {{ symbol }}{{rent.charges.rent_price}}/Month
+                            {{ symbol }}{{ rent.charges.rent_price }}/Month
                           </p>
                         </div>
                         <p class="m-0 font-16 desc mt-lg-2">
-                          {{rent.title}}
+                          {{ rent.title }}
                         </p>
 
                         <div class="row rent mt-lg-3 mt-2">
                           <div class="col-5 col-sm-4">
                             <p class="font-14">Rent Type</p>
-                            <p class="font-14 text-gray">{{rent.type}}</p>
+                            <p class="font-14 text-gray">{{ rent.type }}</p>
                           </div>
                           <div class="col-7 col-sm-8">
                             <p class="font-14">Rent From</p>
-                            <p class="font-14 text-gray">{{rent.rent_info.available_from}}</p>
+                            <p class="font-14 text-gray">
+                              {{ rent.rent_info.available_from }}
+                            </p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </nuxt-link>
 
-                  <div v-if="isLogging && doMatch(rent.id) == 1" class="favorite-icon" @click="removeFavorite(rent.id)">
+                  <div
+                    v-if="isLogging && doMatch(rent.id) == 1"
+                    class="favorite-icon"
+                    @click="removeFavorite(rent.id)"
+                  >
                     <span class="heard-like">
                       <i class="fa-solid fa-heart"></i>
                     </span>
                   </div>
 
-                  <div v-else class="favorite-icon" @click="addFavorite(rent.id)">
+                  <div
+                    v-else
+                    class="favorite-icon"
+                    @click="addFavorite(rent.id)"
+                  >
                     <span class="heard">
                       <!-- <i class="fa-solid fa-heart"></i> -->
                       <i class="fa-regular fa-heart"></i>
@@ -297,15 +381,13 @@
                   </div>
                 </div>
 
-                <div v-if="paginateItems ==''" class="mt-4">
+                <div v-if="paginateItems == ''" class="mt-4">
                   <div class="emply-message text-center">
-                      <h3>Oops!</h3>
-                      <p>Rents list is empty</p>
+                    <h3>Oops!</h3>
+                    <p>Rents list is empty</p>
                   </div>
                 </div>
-
               </div>
-
             </div>
 
             <!-- custom pagination -->
@@ -318,8 +400,6 @@
                 aria-controls="AllRentLists"
               ></b-pagination>
             </div>
-
-
           </div>
         </div>
       </div>
@@ -336,55 +416,66 @@ export default {
   data() {
     return {
       allRents: [],
-      rentTypeList: '',
-      cityList: '',
+      rentTypeList: "",
+      cityList: "",
       currentPage: 1,
       perPage: 10,
-      rows: '',
-      paginateItems: '',
+      rows: "",
+      paginateItems: "",
 
-      filters:{
-        short_by: '',
-        month: '',
-        city: '',
-        rent_type: '',
-        male_student:'',
-        female_student: '',
-        man_job: '',
-        women_job: '',
-        badroom: '',
-        washroom: '',
-        min: '',
-        max: '',
+      filters: {
+        short_by: "",
+        month: "",
+        city: "",
+        rent_type: "",
+        male_student: "",
+        female_student: "",
+        man_job: "",
+        women_job: "",
+        badroom: "",
+        washroom: "",
+        min: "",
+        max: "",
       },
 
-      city: '',
-      type: '',
+      city: "",
+      type: "",
 
-      monthList:[
-        'January','February','March','April','May','June','July','August','September','October','November','December'
+      monthList: [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
       ],
       favoriteList: {},
-      minAmount: '',
-      maxAmount: '',
+      minAmount: "",
+      maxAmount: "",
     };
   },
-  watch:{
-    currentPage(){
-      this.sliceItemsForList()
+  watch: {
+    currentPage() {
+      this.sliceItemsForList();
     },
-    'filters': {
+    filters: {
       handler: function (after, before) {
-        this.GetAllRents()
+        this.GetAllRents();
       },
-      deep: true
-    }
+      deep: true,
+    },
   },
   computed: mapGetters({
     symbol: "currency/getSymbol",
-    isLogging: 'auth/isLoggedIn',
-    showLoader: 'loader/getLoader',
-    filtersData: 'filter/filters',
+    isLogging: "auth/isLoggedIn",
+    showLoader: "loader/getLoader",
+    filtersData: "filter/filters",
   }),
   mounted() {
     this.GetAllRents();
@@ -395,113 +486,142 @@ export default {
   },
 
   methods: {
-    searchMaxMin(){
-      this.filters.min = this.minAmount
-      this.filters.max = this.maxAmount
+    searchMaxMin() {
+      this.filters.min = this.minAmount;
+      this.filters.max = this.maxAmount;
     },
-    searchCityType(){
-      this.filters.city = this.city
-      this.filters.rent_type = this.type
+    searchCityType() {
+      this.filters.city = this.city;
+      this.filters.rent_type = this.type;
     },
 
-    doMatch(id){
+    doMatch(id) {
       if (!this.favoriteList) {
-        return false
+        return false;
       }
 
       for (let i = 0; i < this.favoriteList.length; i++) {
         if (this.favoriteList[i].rent.id === id) {
-          return true
+          return true;
         }
       }
     },
 
-    addFavorite(id){
+    addFavorite(id) {
       if (!this.isLogging) {
-        this.$toast.error('Please Login first')
-        this.$router.push('/login-signup')
+        this.$toast.error("Please Login first");
+        this.$router.push("/login-signup");
       }
-      this.$store.dispatch('favorite/addFavorites','rent_id='+id).then(res=>{
-        this.$toast.success(res.message)
-        this.getFavoriteList()
-      })
+      this.$store
+        .dispatch("favorite/addFavorites", "rent_id=" + id)
+        .then((res) => {
+          this.$toast.success(res.message);
+          this.getFavoriteList();
+        });
     },
 
-    removeFavorite(id){
+    removeFavorite(id) {
       for (let i = 0; i < this.favoriteList.length; i++) {
         if (this.favoriteList[i].rent.id === id) {
-          this.$store.dispatch('favorite/removeFavorite',this.favoriteList[i].id).then(res=>{
-            this.$toast.success(res.message)
-            this.favoriteList.splice(i,1)
-          })
-          return true
+          this.$store
+            .dispatch("favorite/removeFavorite", this.favoriteList[i].id)
+            .then((res) => {
+              this.$toast.success(res.message);
+              this.favoriteList.splice(i, 1);
+            });
+          return true;
         }
       }
     },
 
-    getFavoriteList(){
-      this.$store.dispatch('favorite/favoriteList')
-      .then(res=> {
-        this.favoriteList = res.data.favorites
-      })
+    getFavoriteList() {
+      this.$store.dispatch("favorite/favoriteList").then((res) => {
+        this.favoriteList = res.data.favorites;
+      });
     },
 
-    GetAllRents(){
-      const MaleStudent = this.filters.male_student ? '1' : '';
-      const FemalStudent = this.filters.female_student ? '1' : '';
-      const MaleJob = this.filters.man_job ? '1' : '';
-      const FemalJob = this.filters.women_job ? '1' : '';
+    GetAllRents() {
+      const MaleStudent = this.filters.male_student ? "1" : "";
+      const FemalStudent = this.filters.female_student ? "1" : "";
+      const MaleJob = this.filters.man_job ? "1" : "";
+      const FemalJob = this.filters.women_job ? "1" : "";
 
-      const filter = "short_by="+this.filters.short_by+"&month="+this.filters.month+"&city="+this.filters.city+"&rent_type="+this.filters.rent_type+"&badroom="+this.filters.badroom+"&washroom="+this.filters.washroom+"&min="+this.filters.min+"&max="+this.filters.max+"&male_student="+MaleStudent+"&female_student="+FemalStudent+"&man_job="+MaleJob+"&women_job="+FemalJob;
+      const filter =
+        "short_by=" +
+        this.filters.short_by +
+        "&month=" +
+        this.filters.month +
+        "&city=" +
+        this.filters.city +
+        "&rent_type=" +
+        this.filters.rent_type +
+        "&badroom=" +
+        this.filters.badroom +
+        "&washroom=" +
+        this.filters.washroom +
+        "&min=" +
+        this.filters.min +
+        "&max=" +
+        this.filters.max +
+        "&male_student=" +
+        MaleStudent +
+        "&female_student=" +
+        FemalStudent +
+        "&man_job=" +
+        MaleJob +
+        "&women_job=" +
+        FemalJob;
 
-      this.$store.commit("loader/SET_Loader",true)
-      this.$store.dispatch("rent/getAllRents",filter).then(res => {
-        this.allRents = res.data.rents
-        this.rows = this.allRents.length;
-        this.sliceItemsForList()
-        this.$store.commit("loader/SET_Loader",false)
-      }).catch(err=>{
-        this.$store.commit("loader/SET_Loader",false)
-        console.log(err);
-      })
+      this.$store.commit("loader/SET_Loader", true);
+      this.$store
+        .dispatch("rent/getAllRents", filter)
+        .then((res) => {
+          this.allRents = res.data.rents;
+          this.rows = this.allRents.length;
+          this.sliceItemsForList();
+          this.$store.commit("loader/SET_Loader", false);
+        })
+        .catch((err) => {
+          this.$store.commit("loader/SET_Loader", false);
+          console.log(err);
+        });
     },
 
-    getRentType(){
-      this.$store.dispatch("rent/rentType").then(res=>{
-        this.rentTypeList = res.data.type
-      })
+    getRentType() {
+      this.$store.dispatch("rent/rentType").then((res) => {
+        this.rentTypeList = res.data.type;
+      });
     },
-    getCity(){
-      this.$store.dispatch("rent/getCity").then( res => {
-        this.cityList = res.data.cities
-      })
+    getCity() {
+      this.$store.dispatch("rent/getCity").then((res) => {
+        this.cityList = res.data.cities;
+      });
     },
 
     sliceItemsForList() {
       this.paginateItems = this.allRents.slice(
         (this.currentPage - 1) * this.perPage,
-        this.currentPage * this.perPage,
+        this.currentPage * this.perPage
       );
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
 
-    filtersDataSet(){
-     if (this.filtersData) {
-      this.filters.city =  this.filtersData.city
-      this.city = this.filtersData.city
-      this.filters.rent_type = this.filtersData.type
-      this.type = this.filtersData.type
-      this.filters.badroom = this.filtersData.badroom
-      this.filters.washroom = this.filtersData.washroom
-      this.filters.min = this.filtersData.min
-      this.filters.max = this.filtersData.max
-      this.minAmount = this.filtersData.min
-      this.maxAmount = this.filtersData.max
-      this.filters.month = this.filtersData.month
-      this.$store.commit('filter/SET_DATA', '')
-     }
+    filtersDataSet() {
+      if (this.filtersData) {
+        this.filters.city = this.filtersData.city;
+        this.city = this.filtersData.city;
+        this.filters.rent_type = this.filtersData.type;
+        this.type = this.filtersData.type;
+        this.filters.badroom = this.filtersData.badroom;
+        this.filters.washroom = this.filtersData.washroom;
+        this.filters.min = this.filtersData.min;
+        this.filters.max = this.filtersData.max;
+        this.minAmount = this.filtersData.min;
+        this.maxAmount = this.filtersData.max;
+        this.filters.month = this.filtersData.month;
+        this.$store.commit("filter/SET_DATA", "");
+      }
     },
-
   },
 };
 </script>
