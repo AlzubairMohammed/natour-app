@@ -46,6 +46,7 @@ class UserRepository extends Repository
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
+            'langauges' => $request->langauges,
             'phone' => \formatMobile($request->contact),
             'additional_phone' => \formatMobile($request->additional_contact),
             'password' => Hash::make($request->password),

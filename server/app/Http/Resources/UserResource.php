@@ -26,7 +26,8 @@ class UserResource extends JsonResource
             'email_verified' => Carbon::parse($this->email_verified_at)->format('M d, Y H:i'),
             'phone_verified' => Carbon::parse($this->phone_verified_at)->format('M d, Y H:i'),
             'profile_photo' => $this->thumbnail,
-            'is_approved' => $this->is_approved
+            'is_approved' => $this->is_approved,
+            'langauges'=> $this->langauges
         ];
     }
 }
