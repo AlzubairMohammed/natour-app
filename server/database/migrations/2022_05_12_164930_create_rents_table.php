@@ -19,8 +19,11 @@ class CreateRentsTable extends Migration
             $table->id();
             $table->foreignId('customer_id')->constrained((new Customer())->getTable());
             $table->string('title');
+            $table->integer('room_number');
+            $table->string('lng');
+            $table->string('lat');
             $table->longText('description');
-            $table->enum('type', config('enums.rent_types'));
+            $table->integer('type');
             $table->integer('washroom');
             $table->integer('balcony')->nullable();
             $table->string('position')->nullable();

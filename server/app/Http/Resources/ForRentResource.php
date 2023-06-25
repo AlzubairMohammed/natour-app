@@ -19,6 +19,7 @@ class ForRentResource extends JsonResource
             'female_student' => $this->female_student,
             'man_job' => $this->man_job,
             'women_job' => $this->women_job,
+            'family' => $this->family,
             'any' => $this->any
         ];
     }

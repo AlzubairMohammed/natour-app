@@ -25,12 +25,15 @@ class RentRequest extends FormRequest
     {
         return [
              'title' => 'required|string',
+             'lng' => 'required|string',
+             'lat' => 'required|string',
              'description' => 'required|string',
-             'type' => 'required|string',
+             'type' => 'required|numeric',
              'washroom' => 'required|numeric',
              'balcony' => 'required|numeric',
              'position' => 'required|string',
              'bad' => 'required|numeric',
+             'room_number' => 'required|numeric',
 
              'available_from' => 'required|date',
              'city' => 'required|exists:cities,id',
@@ -49,6 +52,7 @@ class RentRequest extends FormRequest
              'female_student' => 'nullable|boolean',
              'man_job' => 'nullable|boolean',
              'women_job' => 'nullable|boolean',
+             'family' => 'nullable|boolean',
              'any' => 'nullable|boolean',
 
              'lift' => 'nullable|boolean',

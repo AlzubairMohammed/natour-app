@@ -22,6 +22,7 @@ class CreateForRentsTable extends Migration
             $table->boolean('female_student')->default(false);
             $table->boolean('man_job')->default(false);
             $table->boolean('women_job')->default(false);
+            $table->boolean('family')->default(false);
             $table->boolean('any')->default(false);
             $table->timestamps();
         });

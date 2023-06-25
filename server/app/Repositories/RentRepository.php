@@ -66,6 +66,11 @@ class RentRepository extends Repository
             $forRent->where('women_job', '1');
         });
        }
+       if (request()->room_number) {
+        $rent = $rent->whereHas('ForRent', function ($forRent){
+            $forRent->where('room_number', '1');
+        });
+       }
 
        $badroom = request()->badroom;
        if ($badroom) {
@@ -139,6 +144,9 @@ class RentRepository extends Repository
            'position' => $request->position,
            'bad' => $request->bad,
            'price' => $request->rent_price,
+           'room_number'=> $request->room_number,
+           'lng'=>$request->lng,
+           'lat'=>$request->lat,
            'is_active' => 1,
        ]);
 
