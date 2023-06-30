@@ -16,19 +16,19 @@ class AreaSeeder extends Seeder
      */
     public function run()
     {
-        $citys = City::all();
+        // $citys = City::all();
 
-        $json = File::get('database/data/area.json');
-        $areas = json_decode($json);
+        // $json = File::get('database/data/area.json');
+        // $areas = json_decode($json);
 
-        foreach ($citys as $city) {
-            foreach($areas as $area){
-                Area::create([
-                    'city_id' => $city->id,
-                    'name' => $area->name
-                ]);
-            }
-        }
+        // foreach ($citys as $city) {
+        //     foreach($areas as $area){
+        //         Area::create([
+        //             'city_id' => $city->id,
+        //             'name' => $area->name
+        //         ]);
+        //     }
+        // }
 
     }
 }
