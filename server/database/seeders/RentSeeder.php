@@ -21,20 +21,7 @@ class RentSeeder extends Seeder
      */
     public function run()
     {
-        $customers = Customer::all();
-
-        foreach($customers as $customer){
-            Rent::factory(rand(5, 10))->create(['customer_id' => $customer->id]);
-        }
         
-        foreach(Rent::all() as $rent){
-            Cost::factory()->create(['rent_id' => $rent->id]);
-            Facility::factory()->create(['rent_id' => $rent->id]);
-            ForRent::factory()->create(['rent_id' => $rent->id]);
-            Religion::factory()->create(['rent_id' => $rent->id]);
-            RentInfo::factory()->create(['rent_id' => $rent->id]);
-            RentThumbnail::factory(4)->create(['rent_id' => $rent->id]);
-        }
 
     }
 }
