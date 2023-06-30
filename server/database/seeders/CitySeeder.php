@@ -15,15 +15,15 @@ class CitySeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/city.json");
-        $citys = json_decode($json);
+        // $json = File::get("database/data/city.json");
+        // $citys = json_decode($json);
 
-        foreach ($citys as $value) {
-            City::create([
-                'name' => $value->name,
-                'short_name' => $value->shortname,
-            ]);
-        }
+        // foreach ($citys as $value) {
+        //     City::create([
+        //         'name' => $value->name,
+        //         'short_name' => $value->shortname,
+        //     ]);
+        // }
         
     }
 }
