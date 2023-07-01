@@ -39,15 +39,16 @@ class RentRepository extends Repository
             $RentInfo->where('city_id', $city);
         });
        }
+       if (request()->area) {
+        $area = request()->area;
+        $rent = $rent->whereHas('RentInfo', function ($RentInfo) use ($area) {
+            $RentInfo->where('area_id', $area);
+        });
+       }
 
        if (request()->rent_type) {
         $rent_type = request()->rent_type;
         $rent = $rent->where('type',$rent_type);
-       }
-       
-       if (request()->area) {
-        $area = request()->area;
-        $rent = $rent->where('area',$area);
        }
 
        $male_student = request()->male_student;
