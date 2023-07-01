@@ -44,6 +44,11 @@ class RentRepository extends Repository
         $rent_type = request()->rent_type;
         $rent = $rent->where('type',$rent_type);
        }
+       
+       if (request()->area) {
+        $area = request()->area;
+        $rent = $rent->where('area',$area);
+       }
 
        $male_student = request()->male_student;
        if ($male_student) {
