@@ -16,6 +16,11 @@ class Customer extends Model
         return $this->hasMany(Rent::class);
     }
 
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
