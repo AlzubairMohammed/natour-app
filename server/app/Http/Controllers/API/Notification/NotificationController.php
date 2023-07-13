@@ -17,7 +17,7 @@ class NotificationController extends Controller
     public function myNotifications()
     {
         $customer = auth()->user()->customer;
-        $posts = $customer->notifications()->get();
+        $posts = $customer->notifications()->latest()->get();
         // $notifications = Notification::where('user_id',$user_id)->get();
         return $this->json($posts);
     }
